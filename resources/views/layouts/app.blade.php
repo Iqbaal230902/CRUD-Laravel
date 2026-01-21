@@ -113,38 +113,9 @@
                             </li>
 
                             <li class="relative group">
-                                <button class="flex items-center text-gray-500 transition hover:text-gray-500/75">
-                                    Tentang Kami
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4 3.75a.75.75 0 01-1.04 0l-4-3.75a.75.75 0 01-.02-1.06z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <ul class="absolute left-0 z-10 hidden w-40 bg-white shadow-lg group-hover:block">
-                                    @foreach ($menus as $menu)
-                                        @if ($menu->put_on_navbar == 0)
-                                            <li>
-                                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                                    href="/pages/{{ $menu->id }}">
-                                                    {{ $menu->page_name }}
-                                                </a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
+                                <a class="text-gray-500 transition hover:text-gray-500/75"
+                                    href="/abouts">Tentang Kami</a>
                             </li>
-
-                            @foreach ($menus as $menu)
-                                @if ($menu->put_on_navbar == 1)
-                                    <li>
-                                        <a class="text-gray-500 transition hover:text-gray-500/75"
-                                            href="/pages/{{ $menu->id }}">{{ $menu->page_name }}</a>
-                                    </li>
-                                @endif
-                            @endforeach
-
                             <li>
                                 <a class="text-gray-500 transition hover:text-gray-500/75" href="/galleries">Galeri</a>
                             </li>

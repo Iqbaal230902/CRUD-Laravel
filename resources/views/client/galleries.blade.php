@@ -5,7 +5,7 @@
 
                 {{-- FOTO LANDSCAPE --}}
                 <div class="aspect-[16/9] w-full overflow-hidden">
-                    <img 
+                    <img
                         src="{{ asset('storage/' . $gallery->image) }}"
                         alt="{{ $gallery->title }}"
                         class="w-full h-full object-cover transition duration-300 hover:scale-105"

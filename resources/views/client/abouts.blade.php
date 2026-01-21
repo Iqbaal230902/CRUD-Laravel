@@ -11,7 +11,7 @@
             {{-- FOTO --}}
             <div class="flex justify-center">
                 <img 
-                    src="{{ asset('assets/about.JPG') }}" 
+                    src="{{ asset('assets/tk.jpeg') }}" 
                     alt="Tentang Kami"
                     class="rounded-xl shadow-lg 
                            w-full max-w-sm md:max-w-md lg:max-w-lg
