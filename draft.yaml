@@ -1,0 +1,76 @@
+models:
+  News:
+    user_id: foreign
+    title: string:512
+    thumbnail: string:2048
+    slug: string:512
+    caption: string:150 nullable
+    content: longtext
+    published_at: nullable timestamp
+    publish_status: bool
+
+  Slider:
+    user_id: foreign
+    image: string:2048
+    publish_status: bool
+
+  Gallery:
+    user_id: foreign
+    image: string:2048
+    publish_status: bool
+
+  About:
+    user_id: foreign
+    page_name: string:50
+    content: longtext
+    publish_status: bool
+    put_on_navbar: bool
+
+  Student:
+    user_id: foreign
+    fullname: string:150
+    nickname: string:50 nullable
+    gender: string:20
+    dob: date
+    pob: string:250
+    address: text
+    religion: string:50
+    citizen: string:60
+    child_order: int
+    sibling_blood: int
+    sibling_step: int
+    sibling_adoption: int
+    status_child: string:50
+    language: string:70
+    blood_type: string:10
+    height: int
+    weight: int
+    disease: string:200 nullable
+    imunization: string:200 nullable
+    ideal_job: string:200 nullable
+    father_name: string:150
+    mother_name: string:150
+    father_religion: string:50
+    mother_religion: string:50
+    father_citizen: string:60
+    mother_citizen: string:60
+    father_last_education: string:100
+    mother_last_education: string:100
+    father_job: string:100
+    mother_job: string:100
+    father_phone: string:20
+    mother_phone: string:20
+    father_address: text
+    mother_address: text
+    father_job_address: text
+    mother_job_address: text
+    guardian_name: string:150
+    guardian_relation: string:50
+    guardian_last_education: string:100
+    guardian_phone: string:20
+    guardian_job: string:100
+    guardian_address: text
+    status: string:50
+    accepted_at: nullable timestamp
+    from_school: string:150 nullable
+    left_school: string:150 nullable
