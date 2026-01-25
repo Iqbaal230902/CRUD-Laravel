@@ -15,9 +15,8 @@
             Tahun Ajaran 2026 / 2027
         </p>
 
-        <a href="https://wa.me/6285810592026"
-            class="inline-block bg-white text-[#0f6d73] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition">
-            Daftar Sekarang
+        <a href="{{ route('create') }}" class="inline-block bg-white text-[#0f6d73] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition">
+            <button>Daftar Sekarang</button>
         </a>
     </div>
 </section>

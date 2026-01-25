@@ -94,47 +94,53 @@
         </p>
     </div>
 
-    <header class="bg-white">
+    <header class="bg-white border-b border-gray-200">
         <div class="mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
-                <div class="flex-1 md:flex md:items-center md:gap-12">
-                    <a class="block text-gray-500 flex gap-2" href="/">
-                        <span class="sr-only">Home</span>
-                        <img class="h-9" src="{{ asset('assets/logo-yayasan.png') }}" alt="Logo RA Annidhomiyyah">
-                        <span class="text-lg my-auto">RA Annidhomiyyah</span>
-                    </a>
+
+                <!-- LOGO -->
+                <div class="flex items-center gap-2">
+                    <img class="h-9" src="{{ asset('assets/logo-yayasan.png') }}" alt="Logo RA Annidhomiyyah">
+                    <span class="text-lg font-medium">RA Annidhomiyyah</span>
                 </div>
 
-                <div class="md:flex md:items-center md:gap-12">
-                    <nav aria-label="Global" class="hidden md:block">
-                        <ul class="flex items-center gap-6 text-sm">
-                            <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/">Beranda</a>
-                            </li>
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-700 hover:text-[#0f6d73] font-medium transition">Beranda</a>
+                    <a href="/abouts" class="text-gray-700 hover:text-[#0f6d73] font-medium transition">Tentang Kami</a>
+                    <a href="/galleries" class="text-gray-700 hover:text-[#0f6d73] font-medium transition">Galeri</a>
+                    <a href="/news" class="text-gray-700 hover:text-[#0f6d73] font-medium transition">Berita</a>
+                    <a href="/ppdbs" class="px-4 py-2 bg-[#0f6d73] text-white font-semibold rounded hover:bg-[#0d5a60] transition">PPDB</a>
+                </nav>
 
-                            <li class="relative group">
-                                <a class="text-gray-500 transition hover:text-gray-500/75"
-                                    href="/abouts">Tentang Kami</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/galleries">Galeri</a>
-                            </li>
-
-                            <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/news">Berita</a>
-                            </li>
-
-                            <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75"
-                                    href="/ppdbs">PPDB</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
+                <!-- HAMBURGER (mobile) -->
+                <button id="menu-toggle" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- MOBILE MENU -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+    <ul class="flex flex-col divide-y text-gray-700">
+        <li><a href="/" class="block px-6 py-3 hover:bg-gray-100">Beranda</a></li>
+        <li><a href="/abouts" class="block px-6 py-3 hover:bg-gray-100">Tentang Kami</a></li>
+        <li><a href="/galleries" class="block px-6 py-3 hover:bg-gray-100">Galeri</a></li>
+        <li><a href="/news" class="block px-6 py-3 hover:bg-gray-100">Berita</a></li>
+        <li><a href="/ppdbs" class="block px-6 py-3 hover:bg-gray-100 font-semibold text-[#0f6d73]">PPDB</a></li>
+    </ul>
+</div>
+
+<script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
 
     {{-- <script>
         let hamburgerOpen = false;

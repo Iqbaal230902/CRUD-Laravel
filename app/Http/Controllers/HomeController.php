@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Gallery;
 use App\Models\News;
 use App\Models\Slider;
+use App\Models\Ppdb;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -61,5 +62,26 @@ class HomeController extends Controller
         $menus = About::where('publish_status', true)->get();
         $data = About::where('publish_status', true);
         return view('client.ppdbs', compact('data', 'menus'));
+    }
+
+    public function create()
+    {
+        return view('client.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'         => 'required|string|max:150',
+            'email'        => 'required|email|unique:ppdbs,email',
+            'phone'        => 'required|max:20',
+            'address'      => 'required',
+            'birth_date'   => 'required|date',
+            'birth_place'  => 'required|max:100',
+        ]);
+
+        Ppdb::create($request->all());
+
+        return redirect()->back()->with('success', 'Pendaftaran berhasil!');
     }
 }

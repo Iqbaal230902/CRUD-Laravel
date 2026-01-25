@@ -9,3 +9,5 @@ Route::get('/news/{slug}', [\App\Http\Controllers\HomeController::class, 'newsDe
 Route::get('/galleries', [\App\Http\Controllers\HomeController::class, 'galleries'])->name('galleries');
 Route::get('/abouts', [\App\Http\Controllers\HomeController::class, 'abouts'])->name('abouts');
 Route::get('/ppdbs', [\App\Http\Controllers\HomeController::class, 'ppdbs'])->name('ppdbs');
+Route::get('/create', [\App\Http\Controllers\HomeController::class, 'create'])->name('create');
+Route::post('/store', [\App\Http\Controllers\HomeController::class, 'store'])->name('store');
