@@ -38,6 +38,11 @@ class GalleryResource extends Resource
                     ])
                     ->required()
                     ->columnSpanFull(),
+                Forms\Components\Textarea::make('caption')
+                    ->label('Caption')
+                    ->placeholder('Masukkan deskripsi untuk gambar ini')
+                    ->rows(3)
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('publish_status')
                     ->label('Publikasikan')
                     ->required(),
@@ -52,6 +57,10 @@ class GalleryResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('caption')
+                    ->label('Caption')
+                    ->limit(50)
+                    ->searchable(),
                 Tables\Columns\IconColumn::make('publish_status')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')

@@ -15,6 +15,7 @@ class Ppdb extends Model
         'phone',
         'address',
         'birth_date',
-        'birth_place'
-    ];
+        'birth_place',
+        'gender',
+        ];
 }
