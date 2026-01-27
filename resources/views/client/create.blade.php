@@ -69,9 +69,25 @@
                     required>
             </div>
 
+            <div>
+                <label class="text-sm font-medium text-gray-600">Jenis Kelamin</label>
+                <select name="gender"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+                    required>
+                    <option value="">-- Pilih Jenis Kelamin --</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+
             <button type="submit"
                 class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 rounded-lg transition duration-200">
                 Daftar Sekarang 🚀
+            </button>
+
+            <button type="button" onclick="window.history.back()"
+                class="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 rounded-lg transition duration-200 mt-2">
+                Batal
             </button>
         </form>
     </div>
