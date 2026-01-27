@@ -4,6 +4,29 @@
 
 @section('content')
 
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Success Notification Script -->
+@if(session('success'))
+<script>
+    // Clear session to prevent repeated redirects
+    Swal.fire({
+        icon: 'success',
+        title: 'Pendaftaran Berhasil!',
+        text: '{{ session('success') }}',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#0f6d73',
+        allowOutsideClick: false,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Reload page once to clear session
+            window.location.href = '{{ route('ppdbs') }}?success=1';
+        }
+    });
+</script>
+@endif
+
 {{-- HERO PPDB --}}
 <section class="relative bg-[#0f6d73]">
     <div class="max-w-7xl mx-auto px-6 py-20 text-center text-white">

@@ -48,6 +48,13 @@ class PpdbResource extends Resource
                     ->label('Tempat Lahir')
                     ->required()
                     ->maxLength(100),
+                Forms\Components\Select::make('gender')
+                    ->label('Jenis Kelamin')
+                    ->options([
+                        'Laki-laki' => 'Laki-laki',
+                        'Perempuan' => 'Perempuan',
+                    ])
+                    ->required(),
             ]);
     }
 
@@ -72,6 +79,9 @@ class PpdbResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('birth_place')
                     ->label('Tempat Lahir'),
+                Tables\Columns\TextColumn::make('gender')
+                    ->label('Jenis Kelamin')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Terdaftar')
                     ->dateTime('d/m/Y H:i')

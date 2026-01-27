@@ -78,10 +78,10 @@ class HomeController extends Controller
             'address'      => 'required',
             'birth_date'   => 'required|date',
             'birth_place'  => 'required|max:100',
-        ]);
+            'gender'       => 'required|in:Laki-laki,Perempuan',]);
 
         Ppdb::create($request->all());
 
-        return redirect()->back()->with('success', 'Pendaftaran berhasil!');
+        return redirect()->route('ppdbs')->with('success', 'Pendaftaran peserta didik berhasil! Terima kasih telah mendaftar.');
     }
 }
