@@ -31,6 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->registration()
             ->login()
+            ->favicon(asset('assets/RA_logo.png'))
             ->colors([
                 'primary' => Color::Amber,
             ])
